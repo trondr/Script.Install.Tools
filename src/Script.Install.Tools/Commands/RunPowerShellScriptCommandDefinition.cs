@@ -1,5 +1,4 @@
-﻿using System;
-using Common.Logging;
+﻿using Common.Logging;
 using NCmdLiner.Attributes;
 using Script.Install.Tools.Library.Commands.Example;
 using Script.Install.Tools.Library.Infrastructure;
@@ -26,20 +25,10 @@ namespace Script.Install.Tools.Commands
             [OptionalCommandParameter(Description = "Run in native mode. If true run in 64 bit process on a 64 bit OS. If false run in 32 bit on a 64 bit OS.", AlternativeName = "rn", ExampleValue = true, DefaultValue = true)]
             bool runInNativeMode,
             [OptionalCommandParameter(Description = "Hide command line arguments in logs in case one or more arguments are secrets.", AlternativeName = "ha", ExampleValue = true, DefaultValue = true)]
-            bool hideArguments,
-            [OptionalCommandParameter(Description = "PowerShell verbose log preference", AlternativeName = "vp", ExampleValue = true, DefaultValue = "SilentlyContinue")]
-            string verbosePreference,
-            [OptionalCommandParameter(Description = "PowerShell debug log preference", AlternativeName = "dp", ExampleValue = true, DefaultValue = "SilentlyContinue")]
-            string debugPreference,
-            [OptionalCommandParameter(Description = "PowerShell warning log preference", AlternativeName = "wp", ExampleValue = true, DefaultValue = "Continue")]
-            string warningPreference,
-            [OptionalCommandParameter(Description = "PowerShell error log preference", AlternativeName = "ep", ExampleValue = true, DefaultValue = "Continue")]
-            string errorActionPreference,
-            [OptionalCommandParameter(Description = "PowerShell progress log preference", AlternativeName = "pp", ExampleValue = true, DefaultValue = "Continue")]
-            string progressPreference
+            bool hideArguments            
             )
         {
-            return _runPowerShellScriptCommandProvider.RunPowerShellScript(powerShellScriptFile, arguments, runInNativeMode, hideArguments, verbosePreference, debugPreference, warningPreference, errorActionPreference, progressPreference);
+            return _runPowerShellScriptCommandProvider.RunPowerShellScript(powerShellScriptFile, arguments, runInNativeMode, hideArguments);
         }
     }
 }

@@ -70,7 +70,7 @@ namespace Script.Install.Tools.Infrastructure
             container.Register(Classes.FromAssemblyContaining<CommandProvider>()
                 .InNamespace(libraryRootNameSpace, true)
                 .If(type => type.Is<CommandProvider>())
-                .Configure(registration => registration.Interceptors(new[] { typeof(InfoLogAspect) }))
+                .Configure(registration => registration.Interceptors(new[] { typeof(DebugLogAspect) }))
                 .WithService.DefaultInterfaces().LifestyleTransient()                
             );
             //

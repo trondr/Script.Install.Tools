@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Script.Install.Tools.Library")]
 [assembly: AssemblyCopyright("Copyright © github.com-trondr 2015")]
 [assembly: CLSCompliant(false)]
-[assembly: AssemblyInformationalVersion("1.0.15102.0.5c86a52")]
+[assembly: AssemblyInformationalVersion("1.0.15102.0.a467199")]
 [assembly: AssemblyVersion("1.0.15102.0")]
 [assembly: AssemblyFileVersion("1.0.15102.0")]
 

@@ -42,24 +42,17 @@ namespace Script.Install.Tools.Library.Commands.Example
             Console.WriteLine(e.Text);
         }
 
-        public int RunPowerShellScript(string powerShellScriptFile, string[] arguments, bool runInNativeMode, bool hideArguments,
-            string verbosePreference, string debugPreference, string warningPreference, string errorActionPreference,
-            string progressPreference)
+        public int RunPowerShellScript(string powerShellScriptFile, string[] arguments, bool runInNativeMode, bool hideArguments)
         {
             
             var powerShellArguments = new StringBuilder();
             powerShellArguments.AppendFormat("-Command \"& {{ ");
-            powerShellArguments.AppendFormat("$global:VerbosePreference=\\\"{0}\\\"; ", verbosePreference);
-            powerShellArguments.AppendFormat("$global:DebugPreference=\\\"{0}\\\"; ", debugPreference);
-            powerShellArguments.AppendFormat("$global:WarningPreference=\\\"{0}\\\"; ", warningPreference);
-            powerShellArguments.AppendFormat("$global:ErrorActionPreference=\\\"{0}\\\"; ", errorActionPreference);
-            powerShellArguments.AppendFormat("$global:ProgressPreference=\\\"{0}\\\"; ", progressPreference);            
             powerShellArguments.AppendFormat(" . \\\"{0}\\\" ", powerShellScriptFile);
-            for (int i = 0; i < arguments.Length; i++)
+            foreach (var argument in arguments)
             {
-                if(!string.IsNullOrEmpty(arguments[i]))
+                if(!string.IsNullOrEmpty(argument))
                 { 
-                    powerShellArguments.AppendFormat("\"{0}\" ", arguments[i]);
+                    powerShellArguments.AppendFormat("\"{0}\" ", argument);
                 }
             }
             powerShellArguments.Append("; exit $LASTEXITCODE");
@@ -67,10 +60,10 @@ namespace Script.Install.Tools.Library.Commands.Example
             var directoryInfo = new FileInfo(powerShellScriptFile).Directory;
             if (directoryInfo != null)
             {
-                var powerShellExe = GetPowerShellExe(runInNativeMode);
-                _logger.InfoFormat("Executing: \"{0}\" {1}", powerShellExe, powerShellArguments);
+                var powerShellExe = GetPowerShellExe(runInNativeMode);                
+                _logger.InfoFormat("Executing: \"{0}\" {1}", powerShellExe, hideArguments? "***hidden***arguments***" : powerShellArguments.ToString());
                 _cmdProcessor.Execute(powerShellExe, powerShellArguments.ToString(), directoryInfo.FullName, true);
-                _logger.InfoFormat("Finished executing: \"{0}\" {1}", powerShellExe, powerShellArguments);
+                _logger.InfoFormat("Finished executing: \"{0}\" {1}", powerShellExe, hideArguments? "***hidden***arguments***" : powerShellArguments.ToString());
                 return _cmdProcessor.ExitCode;
             }
             _logger.ErrorFormat("Could not derive parent directory from PowerShell script file '{0}'", powerShellScriptFile);

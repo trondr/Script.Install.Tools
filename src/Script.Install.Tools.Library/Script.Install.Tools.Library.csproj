@@ -68,8 +68,8 @@
     <Compile Include="Infrastructure\CommandProvider.cs" />
     <Compile Include="Infrastructure\ILoggingConfiguration.cs" />
     <Compile Include="Infrastructure\LoggingConfiguration.cs" />
-    <Compile Include="Commands\Example\IRunPowerShellScriptCommandProvider.cs" />
-    <Compile Include="Commands\Example\RunPowerShellScriptCommandProvider.cs" />
+    <Compile Include="Commands\RunPowerShellScriptCommandProvider\IRunPowerShellScriptCommandProvider.cs" />
+    <Compile Include="Commands\RunPowerShellScriptCommandProvider\RunPowerShellScriptCommandProvider.cs" />
     <Compile Include="Infrastructure\ApplicationInfoHelper.cs" />
     <Compile Include="Infrastructure\CommandDefinition.cs" />
     <Compile Include="Infrastructure\SingletonAttribute.cs" />

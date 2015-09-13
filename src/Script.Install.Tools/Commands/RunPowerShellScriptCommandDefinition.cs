@@ -1,6 +1,6 @@
 ﻿using Common.Logging;
 using NCmdLiner.Attributes;
-using Script.Install.Tools.Library.Commands.Example;
+using Script.Install.Tools.Library.Commands.RunPowerShellScriptCommandProvider;
 using Script.Install.Tools.Library.Infrastructure;
 
 namespace Script.Install.Tools.Commands
@@ -16,7 +16,7 @@ namespace Script.Install.Tools.Commands
             _logger = logger;
         }
 
-        [Command(Description = "Just an example command. To be deleted or renamed for your own use")]
+        [Command(Description = "Run PowerShell script")]
         public int RunPowerShellScript(
             [RequiredCommandParameter(Description = "PowerShell script file.", AlternativeName = "pf", ExampleValue = @"c:\temp\Install.ps1")]
             string powerShellScriptFile,

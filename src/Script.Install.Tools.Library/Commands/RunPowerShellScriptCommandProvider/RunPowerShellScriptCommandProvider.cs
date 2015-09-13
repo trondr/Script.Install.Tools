@@ -6,7 +6,7 @@ using Script.Install.Tools.Library.Common.Diagnostics;
 using Script.Install.Tools.Library.Infrastructure;
 using Script.Install.Tools.Library.Views;
 
-namespace Script.Install.Tools.Library.Commands.Example
+namespace Script.Install.Tools.Library.Commands.RunPowerShellScriptCommandProvider
 {
     public class RunPowerShellScriptCommandProvider : CommandProvider, IRunPowerShellScriptCommandProvider
     {
@@ -26,20 +26,17 @@ namespace Script.Install.Tools.Library.Commands.Example
 
         void CmdProcessorStandardOutReceived(object sender, CmdProcessorEventArgs e)
         {
-            //_logger.Info(e.Text);
-            Console.Write(e.Text);
+            _logger.Info(e.Text.TrimEnd());
         }
 
         void CmdProcessorStandardErrorReceived(object sender, CmdProcessorEventArgs e)
         {
-            //_logger.Error(e.Text);
-            Console.Write(e.Text);
+            _logger.Error(e.Text.TrimEnd());
         }
 
         void CmdProcessorProcessExited(object sender, CmdProcessorEventArgs e)
         {
-            //_logger.Info(e.Text);
-            Console.WriteLine(e.Text);
+            _logger.Info(e.Text.TrimEnd());
         }
 
         public int RunPowerShellScript(string powerShellScriptFile, string[] arguments, bool runInNativeMode, bool hideArguments)

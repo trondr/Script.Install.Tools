@@ -1,4 +1,4 @@
-﻿namespace Script.Install.Tools.Library.Commands.Example
+﻿namespace Script.Install.Tools.Library.Commands.RunPowerShellScriptCommandProvider
 {
     public interface IRunPowerShellScriptCommandProvider
     {

@@ -21,7 +21,7 @@
     <SrcDirectory>$(MSBuildProjectDirectory)\src</SrcDirectory>
     <ToolsDirectory>$(MSBuildProjectDirectory)\tools</ToolsDirectory>
   
-    <NunitVersion>2.6.3</NunitVersion>
+    <NunitVersion>2.6.4</NunitVersion>
     
   </PropertyGroup>
 
@@ -286,6 +286,12 @@
     <ReleaseFiles Include="$(BinDirectory)\Release\$(ProductName)\**\*.pdb" Exclude="$(BinDirectory)\Release\$(ProductName)\**\Libs\**" />
     <ReleaseFiles Include="$(BinDirectory)\Release\$(ProductName)\**\*.config" Exclude="$(BinDirectory)\Release\$(ProductName)\**\Libs\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <LibraryReleaseFiles Include="$(BinDirectory)\Release\$(ProductName).Library\**\*.dll" Exclude="$(BinDirectory)\Release\$(ProductName)\**\Libs\**" />
+    <LibraryReleaseFiles Include="$(BinDirectory)\Release\$(ProductName).Library\**\*.pdb" Exclude="$(BinDirectory)\Release\$(ProductName)\**\Libs\**" />    
+  </ItemGroup>
+
   
   <Target Name="Deploy" DependsOnTargets="CompileSetup">
     
@@ -296,6 +302,7 @@
          />
     <Message Text="Script.Install.Tools.$(AssemblyVersion) relase zip complete" Importance="normal" />
 	<Copy SourceFiles="$(BinDirectory)\Release\Script.Install.Tools.$(AssemblyVersion).zip" DestinationFiles="$(MSBuildProjectDirectory)\..\Script.Install.Template\Tools\Script.Install.Tools.zip" />
+	<Copy SourceFiles="@(LibraryReleaseFiles)" DestinationFolder="$(MSBuildProjectDirectory)\..\Script.Install.Template\Tools\Script.Install.Tools.Library" />
 	
    <ItemGroup>
       <SetupFiles Include="$(BinDirectory)\Release\Script.Install.Tools.Setup\en-us\Script.Install.Tools.$(AssemblyVersion).msi" />

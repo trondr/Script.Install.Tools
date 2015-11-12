@@ -65,6 +65,9 @@
     <Compile Include="Common\GenericEventHandler.cs" />
     <Compile Include="Common\Install\IWindowsExplorerContextMenuInstaller.cs" />
     <Compile Include="Common\Install\WindowsExplorerContextMenuInstaller.cs" />
+    <Compile Include="Common\IO\IIniFileOperation.cs" />
+    <Compile Include="Common\IO\IniFileOperation.cs" />
+    <Compile Include="IniFileOperations.cs" />
     <Compile Include="Infrastructure\CommandProvider.cs" />
     <Compile Include="Infrastructure\ILoggingConfiguration.cs" />
     <Compile Include="Infrastructure\LoggingConfiguration.cs" />

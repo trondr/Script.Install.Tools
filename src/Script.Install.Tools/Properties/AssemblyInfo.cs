@@ -17,10 +17,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Script Install Tools")]
 [assembly: AssemblyCompany("github.com-trondr")]
 [assembly: AssemblyProduct("Script.Install.Tools")]
-[assembly: AssemblyCopyright("Copyright © github.com-trondr 2015")]
+[assembly: AssemblyCopyright("Copyright © github.com.trondr 2015")]
 [assembly: CLSCompliant(false)]
-[assembly: AssemblyInformationalVersion("1.0.15102.0.411dbd6")]
-[assembly: AssemblyVersion("1.0.15102.0")]
-[assembly: AssemblyFileVersion("1.0.15102.0")]
+[assembly: AssemblyInformationalVersion("1.0.15316.1.8fe3a49")]
+[assembly: AssemblyVersion("1.0.15316.1")]
+[assembly: AssemblyFileVersion("1.0.15316.1")]
 
 

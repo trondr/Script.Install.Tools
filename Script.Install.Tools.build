@@ -7,7 +7,7 @@
     <ProductName>Script.Install.Tools</ProductName>
     <ProductCompany>github.com-trondr</ProductCompany>
     <ProductDescription>Script Install Tools</ProductDescription>
-    <ProductCopyright>Copyright &#169; github.com-trondr $([System.DateTime]::Now.Year)</ProductCopyright>
+    <ProductCopyright>Copyright &#169; github.com.trondr $([System.DateTime]::Now.Year)</ProductCopyright>
     <ProductProjectName>$(ProductName)</ProductProjectName>
 
     <ShortYear>$([System.DateTime]::Now.ToString(`yy`))</ShortYear>

@@ -43,7 +43,7 @@ namespace Script.Install.Tools.Library.Commands.RunPowerShellScriptCommandProvid
         {
             
             var powerShellArguments = new StringBuilder();
-            powerShellArguments.AppendFormat("-Command \"& {{ ");
+            powerShellArguments.AppendFormat("-ExecutionPolicy Unrestricted -Command \"& {{ ");
             powerShellArguments.AppendFormat(" . \\\"{0}\\\" ", powerShellScriptFile);
             foreach (var argument in arguments)
             {
